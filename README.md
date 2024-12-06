@@ -76,8 +76,3 @@ As a user, I should be able to:
 
 ![botbattlr image](https://camo.githubusercontent.com/79355ccd75ef91e3503f493cc98acf262ecc0c55d4b7d82fa0045afddb3d3bc1/68747470733a2f2f637572726963756c756d2d636f6e74656e742e73332e616d617a6f6e6177732e636f6d2f70686173652d322f70686173652d322d686f6f6b732d636f64652d6368616c6c656e67652d626f742d626174746c722f66756c6c5f64656d6f2e676966)
 
-- Sort bots by their health, damage or armor. For this, create a new component, SortBar.
-- When I enlist a bot it will be removed from the BotCollection and added to YourBotArmy.
-- Filter bots by their class. We can select a few filters at the same time.
-- Sort bots by their health, damage or armor. For this, create a new component, SortBar.
-- Only enlist one bot from each bot_class. The classes are ["Support", "Medic", "Assault", "Defender", "Captain", "Witch"].
