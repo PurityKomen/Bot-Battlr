@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import BotCard from "./BotCard";
 import BotArmy from "./BotArmy";
+import BotDetail from "./BotDetail";
 
 function BotCollection() {
   const [bot, setBot] = useState([]);
   const [botArmy, setBotArmy] = useState([]);
+  const [botDetail, setBotDetail] = useState();
 
-  //fetch bot data 
+  //fetch bot data
   useEffect(() => {
     fetch("http://localhost:3000/bots")
       .then((response) => response.json())
@@ -15,6 +17,17 @@ function BotCollection() {
 
   //get id of bot clicked
   function handleClick(id) {
+    fetch(`http://localhost:3000/bots/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setBotDetail([data]);
+        console.log("data", data);
+      });
+  }
+  console.log("detail", botDetail);
+
+  //get id of bot clicked
+  function addBotArmy(id) {
     fetch(`http://localhost:3000/bots/${id}`)
       .then((response) => response.json())
       .then((data) => addArmy(data));
@@ -26,16 +39,15 @@ function BotCollection() {
   }
 
   //handle delete a bot
-  function handleDelete(id){
-    fetch(`http://localhost:3000/bots/${id}`, {  
-      method: "DELETE"
+  function handleDelete(id) {
+    fetch(`http://localhost:3000/bots/${id}`, {
+      method: "DELETE",
     })
       .then((r) => r.json())
-      .then(() => { 
-            setBot(bot.filter((bo) => bo.id !== id))
-            setBotArmy(botArmy.filter((bo) => bo.id !== id)) 
+      .then(() => {
+        setBot(bot.filter((bo) => bo.id !== id));
+        setBotArmy(botArmy.filter((bo) => bo.id !== id));
       });
-         
   }
 
   return (
@@ -47,6 +59,25 @@ function BotCollection() {
           return (
             <BotArmy
               handleDelete={handleDelete}
+              id={e.id}
+              name={e.name}
+              bclass={e.bot_class}
+              damage={e.damage}
+              health={e.health}
+              armor={e.armor}
+              url={e.avatar_url}
+              catchphrase={e.catchphrase}
+              created={e.created_at}
+            />
+          );
+        })}
+      </div>
+
+      <div className="p-3 mb-2 d-flex justify-content-center">
+        {botDetail?.map((e) => {
+          return (
+            <BotDetail
+              addBotArmy={addBotArmy}
               id={e.id}
               name={e.name}
               bclass={e.bot_class}
