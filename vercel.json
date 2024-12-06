@@ -1,7 +1,7 @@
 {
     "headers": [
       {
-        "source": "/(.*)",
+        "source": "https://bot-battlr-ebmn37het-jepkorirpurity8gmailcoms-projects.vercel.app/bots",
         "headers": [
           { "key": "Access-Control-Allow-Credentials", "value": "true" },
           { "key": "Access-Control-Allow-Origin", "value": "*" },
