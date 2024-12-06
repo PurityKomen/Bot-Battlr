@@ -6,6 +6,18 @@ Welcome to Bot Battlr, the one and only spot in the known universe where you can
 
 Here's the scenario: a galactic overlord has hired you, a galactic web developer, to develop a galactic web app that will allow them to browse through a list of robots, view a robot's details, and, enlist a bot into their army.
 
+## Live Link
+
+- Db.json file - [https://bot-battlr-ebmn37het-jepkorirpurity8gmailcoms-projects.vercel.app/bots]
+- For the app - [ ]
+
+## Technology Used
+
+1. ReactJs
+2. Json Server - fetch db.json data
+3. Vercel
+4. VsCode
+
 ## Instructions
 
 For this project, you’ll be building out a React application that displays a list of available bots, among other features. Try your best to find the right places to insert code into the established code base.

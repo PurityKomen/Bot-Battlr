@@ -10,14 +10,14 @@ function BotCollection() {
 
   //fetch bot data
   useEffect(() => {
-    fetch("http://localhost:3000/bots")
+    fetch("https://bot-battlr-ebmn37het-jepkorirpurity8gmailcoms-projects.vercel.app/bots")
       .then((response) => response.json())
       .then((data) => setBot(data));
   }, []);
 
   //get id of bot clicked
   function handleClick(id) {
-    fetch(`http://localhost:3000/bots/${id}`)
+    fetch(`https://bot-battlr-ebmn37het-jepkorirpurity8gmailcoms-projects.vercel.app/bots/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setBotDetail([data]);
@@ -28,7 +28,7 @@ function BotCollection() {
 
   //get id of bot clicked
   function addBotArmy(id) {
-    fetch(`http://localhost:3000/bots/${id}`)
+    fetch(`https://bot-battlr-ebmn37het-jepkorirpurity8gmailcoms-projects.vercel.app/bots/${id}`)
       .then((response) => response.json())
       .then((data) => addArmy(data));
   }
@@ -40,7 +40,7 @@ function BotCollection() {
 
   //handle delete a bot
   function handleDelete(id) {
-    fetch(`http://localhost:3000/bots/${id}`, {
+    fetch(`https://bot-battlr-ebmn37het-jepkorirpurity8gmailcoms-projects.vercel.app/bots/${id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
